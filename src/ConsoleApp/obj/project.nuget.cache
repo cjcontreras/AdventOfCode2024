@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "3EdOvjhJhhc=",
+  "success": true,
+  "projectFilePath": "/Users/ccontreras/Documents/Training/AdventOfCode2024/src/ConsoleApp/ConsoleApp.csproj",
+  "expectedPackageFiles": [
+    "/Users/ccontreras/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "/Users/ccontreras/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
