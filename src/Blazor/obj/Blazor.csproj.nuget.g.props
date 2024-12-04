@@ -13,11 +13,13 @@
     <SourceRoot Include="/Users/ccontreras/.nuget/packages/" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)xunit.core/2.9.2/build/xunit.core.props" Condition="Exists('$(NuGetPackageRoot)xunit.core/2.9.2/build/xunit.core.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.net.sdk.webassembly.pack/8.0.1/build/Microsoft.NET.Sdk.WebAssembly.Pack.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.sdk.webassembly.pack/8.0.1/build/Microsoft.NET.Sdk.WebAssembly.Pack.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.net.illink.tasks/8.0.1/build/Microsoft.NET.ILLink.Tasks.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.illink.tasks/8.0.1/build/Microsoft.NET.ILLink.Tasks.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly/8.0.1/build/net8.0/Microsoft.AspNetCore.Components.WebAssembly.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly/8.0.1/build/net8.0/Microsoft.AspNetCore.Components.WebAssembly.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">/Users/ccontreras/.nuget/packages/xunit.analyzers/1.16.0</Pkgxunit_analyzers>
     <PkgMicrosoft_NET_Sdk_WebAssembly_Pack Condition=" '$(PkgMicrosoft_NET_Sdk_WebAssembly_Pack)' == '' ">/Users/ccontreras/.nuget/packages/microsoft.net.sdk.webassembly.pack/8.0.1</PkgMicrosoft_NET_Sdk_WebAssembly_Pack>
     <PkgMicrosoft_NET_ILLink_Tasks Condition=" '$(PkgMicrosoft_NET_ILLink_Tasks)' == '' ">/Users/ccontreras/.nuget/packages/microsoft.net.illink.tasks/8.0.1</PkgMicrosoft_NET_ILLink_Tasks>
     <PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer Condition=" '$(PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer)' == '' ">/Users/ccontreras/.nuget/packages/microsoft.aspnetcore.components.webassembly.devserver/8.0.1</PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer>

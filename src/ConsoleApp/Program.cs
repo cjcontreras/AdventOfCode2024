@@ -1,28 +1,42 @@
-﻿using ConsoleApp.Days;
-using ConsoleApp.Days.Day1;
+﻿using ConsoleApp.Days.Day1;
 using ConsoleApp.Utils;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Serilog;
 
+namespace ConsoleApp;
 
-class Program
+internal class Program
 {
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
-        var input = InputReader.ReadLines("Day1Input.txt");
-        var solver = new Day1Solver();
-        var solutionOutput = solver.Solve(input);
-        Console.WriteLine("Day 1 Output: " + solutionOutput);
-    }
+        
+        Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug() // Set minimum log level
+            .WriteTo.Console()    // Log to console
+            .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day) // Log to file
+            .CreateLogger();
+        
+        var serviceProvider = ServiceRegistration.ConfigureServices();
+       
+        var logger = serviceProvider.GetService<ILogger<Program>>();
+        logger.LogInformation("Application has started");
 
-    static ServiceProvider ConfigureServices()
-    {
-        // Set up the service collection
-        var services = new ServiceCollection();
-
-        // Register services
-        services.AddTransient<ISolver, Day1Solver>(); // Add Day1Solver
-
-        // Build the service provider
-        return services.BuildServiceProvider();
+        
+        try
+        {
+            var day1Solver = serviceProvider.GetService<Day1Solver>();
+            var input = InputReader.ReadLines("Day1InputPt1.txt", "Day1");
+            var result = day1Solver!.SolvePt2(input);
+            logger.LogInformation("Day 1 Pt 2 Solution: {Result}", result);
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "An error occurred");
+        }
+        finally
+        {
+            Log.CloseAndFlush(); // Ensure logs are written before app exits
+        }
     }
 }

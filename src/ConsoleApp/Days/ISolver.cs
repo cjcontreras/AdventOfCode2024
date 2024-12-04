@@ -2,5 +2,7 @@ namespace ConsoleApp.Days;
 
 public interface ISolver
 {
-    string Solve(string[] input);
+    string SolvePt1(string[] input);
+    string SolvePt2(string[] input);
+
 }
