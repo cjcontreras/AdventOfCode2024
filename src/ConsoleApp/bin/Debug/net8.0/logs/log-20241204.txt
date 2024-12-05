@@ -35,3 +35,21 @@
 2024-12-04 12:04:21.427 -06:00 [INF] Solving day 1 pt 2
 2024-12-04 12:04:21.465 -06:00 [INF] Total: 22588371
 2024-12-04 12:04:21.466 -06:00 [INF] Day 1 Pt 2 Solution: 22588371
+2024-12-04 16:36:09.634 -06:00 [INF] Application has started
+2024-12-04 16:36:09.671 -06:00 [ERR] An error occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConsoleApp.Program.Main(String[] args) in /Users/ccontreras/Documents/Training/AdventOfCode2024/src/ConsoleApp/Program.cs:line 31
+2024-12-04 16:36:23.132 -06:00 [INF] Application has started
+2024-12-04 16:36:23.166 -06:00 [ERR] An error occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConsoleApp.Program.Main(String[] args) in /Users/ccontreras/Documents/Training/AdventOfCode2024/src/ConsoleApp/Program.cs:line 31
+2024-12-04 16:36:41.653 -06:00 [INF] Application has started
+2024-12-04 16:36:41.693 -06:00 [INF] Day 2 Pt 1 Solution: 572
+2024-12-04 16:42:03.061 -06:00 [INF] Application has started
+2024-12-04 16:42:03.098 -06:00 [INF] Day 2 Pt 2 Solution: 645
+2024-12-04 16:53:40.705 -06:00 [INF] Application has started
+2024-12-04 16:53:40.744 -06:00 [INF] Day 2 Pt 2 Solution: 599
+2024-12-04 16:56:31.460 -06:00 [INF] Application has started
+2024-12-04 16:56:31.501 -06:00 [INF] Day 2 Pt 2 Solution: 593
+2024-12-04 16:57:51.886 -06:00 [INF] Application has started
+2024-12-04 16:57:51.925 -06:00 [INF] Day 2 Pt 2 Solution: 596
