@@ -1,6 +1,7 @@
 ﻿using ConsoleApp.Days;
 using ConsoleApp.Days.Day1;
 using ConsoleApp.Days.Day2;
+using ConsoleApp.Days.Day3;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Serilog;
@@ -27,6 +28,7 @@ public static class ServiceRegistration
         // Register solvers
         services.AddTransient<Day1Solver>();
         services.AddTransient<Day2Solver>();
+        services.AddTransient<Day3Solver>();
 
         // Register a factory for dynamic solver resolution
         services.AddTransient<Func<string, ISolver>>(serviceProvider => key =>
@@ -35,6 +37,7 @@ public static class ServiceRegistration
             {
                 "Day1" => serviceProvider.GetService<Day1Solver>(),
                 "Day2" => serviceProvider.GetService<Day2Solver>(),
+                "Day3" => serviceProvider.GetService<Day3Solver>(),
                 _ => throw new ArgumentException($"No solver found for {key}")
             };
         });
